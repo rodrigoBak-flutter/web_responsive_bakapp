@@ -13,31 +13,34 @@ class Coding extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-       const Divider(),
+        const Divider(),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
-            "Coding",
+            "Gestores de Estados",
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
-       const AnimatedLinearProgressIndicator(
+        const AnimatedLinearProgressIndicator(
           percentage: 0.9,
-          label: "Dart",
+          label: "Getx",
         ),
-       const AnimatedLinearProgressIndicator(
-          percentage: 0.50,
-          label: "JavaScript",
+        const AnimatedLinearProgressIndicator(
+          percentage: 0.95,
+          label: "Provider",
         ),
-       const AnimatedLinearProgressIndicator(
+        const AnimatedLinearProgressIndicator(
+          percentage: 0.6,
+          label: "Riverpod",
+        ),
+        const AnimatedLinearProgressIndicator(
           percentage: 0.4,
-          label: "JAVA",
+          label: "Bloc",
         ),
-       const AnimatedLinearProgressIndicator(
+        const AnimatedLinearProgressIndicator(
           percentage: 0.4,
-          label: "PHP",
+          label: "Ridux",
         ),
-        
       ],
     );
   }

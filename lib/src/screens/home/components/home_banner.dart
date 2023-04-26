@@ -1,8 +1,11 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:web_responsive_bakapp/responsive.dart';
 
 import '../../../../constants.dart';
+
+const googlePlay = 'https://play.google.com/store/apps/developer?id=bak_app';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({
@@ -17,8 +20,8 @@ class HomeBanner extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Container(
-           alignment: Alignment.centerRight,
-           padding: EdgeInsets.all(10),
+            alignment: Alignment.centerRight,
+            padding: const EdgeInsets.all(10),
             child: Image.asset(
               "assets/images/logo.png",
               fit: BoxFit.contain,
@@ -32,7 +35,7 @@ class HomeBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Discover my Amazing \nArt Space!",
+                  "Conoce mi \nespacio de arte!",
                   style: Responsive.isDesktop(context)
                       ? Theme.of(context).textTheme.headline3!.copyWith(
                             fontWeight: FontWeight.bold,
@@ -49,7 +52,7 @@ class HomeBanner extends StatelessWidget {
                 const SizedBox(height: defaultPadding),
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => launchUrlString(googlePlay),
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
                           horizontal: defaultPadding * 2,
@@ -57,7 +60,7 @@ class HomeBanner extends StatelessWidget {
                       backgroundColor: primaryColor,
                     ),
                     child: const Text(
-                      "EXPLORE NOW",
+                      "MIS PROYECTOS PERSONALES",
                       style: TextStyle(color: darkColor),
                     ),
                   ),
@@ -86,7 +89,10 @@ class MyBuildAnimatedText extends StatelessWidget {
           if (!Responsive.isMobileLarge(context)) const FlutterCodedText(),
           if (!Responsive.isMobileLarge(context))
             const SizedBox(width: defaultPadding / 2),
-          const Text("I build "),
+          const Text(
+            "Construyo ",
+            style: TextStyle(fontSize: 12),
+          ),
           Responsive.isMobile(context)
               ? const Expanded(child: AnimatedText())
               : const AnimatedText(),
@@ -109,7 +115,8 @@ class AnimatedText extends StatelessWidget {
     return AnimatedTextKit(
       animatedTexts: [
         TyperAnimatedText(
-          "Responsive web and mobile app.",
+          "aplicaciones de alta calidad, receptivas y fáciles de utilizar.",
+          textStyle: TextStyle(fontSize: 12),
           speed: const Duration(milliseconds: 60),
         ),
       ],

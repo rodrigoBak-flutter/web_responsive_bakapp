@@ -27,15 +27,15 @@ class SideMenu extends StatelessWidget {
                 child: Column(
                   children: [
                     const AreaInfoText(
-                      title: "Residence",
+                      title: "Residencia",
                       text: "España",
                     ),
                     const AreaInfoText(
-                      title: "City",
+                      title: "Ciudad",
                       text: "Bilbao",
                     ),
                     const AreaInfoText(
-                      title: "Age",
+                      title: "Edad",
                       text: "30",
                     ),
                     const Skills(),
@@ -50,7 +50,7 @@ class SideMenu extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              "DOWNLOAD CV",
+                              "DESCARGAR CV",
                               style: TextStyle(
                                 color: Theme.of(context)
                                     .textTheme

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_responsive_bakapp/src/models/Project.dart';
+import 'package:web_responsive_bakapp/src/models/Knowledge.dart';
 import 'package:web_responsive_bakapp/responsive.dart';
 
 import '../../../../constants.dart';
@@ -10,7 +10,7 @@ class ProjectCard extends StatelessWidget {
     required this.project,
   }) : super(key: key);
 
-  final Project project;
+  final Knowledge project;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +34,6 @@ class ProjectCard extends StatelessWidget {
             style: TextStyle(height: 1.5),
           ),
           Spacer(),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              "Read More >>",
-              style: TextStyle(color: primaryColor),
-            ),
-          ),
         ],
       ),
     );
